@@ -11,13 +11,13 @@
  			<servlet-name>my</servlet-name>
  			<url-pattern>/my</url-pattern>
  		</servlet-mapping>
- 	<!--配置第二个servlet  -->
- 		<!-- <servlet>
+ 	<!-- 配置第二个servlet  -->
+ 		<servlet>
  			<servlet-name>my2</servlet-name>
  			<servlet-class>com.servlet.MyServlet2</servlet-class>
  		</servlet>
  		<servlet-mapping>
  			<servlet-name>my2</servlet-name>
  			<url-pattern>/my2</url-pattern>
- 		</servlet-mapping> -->
+ 		</servlet-mapping>
 </web-app>

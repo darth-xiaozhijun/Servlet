@@ -17,12 +17,12 @@
     <url-pattern>/my2</url-pattern>
   </servlet-mapping>
   <servlet>
-  	<servlet-name>ServletLife</servlet-name>
-  	<servlet-class>com.servlet.ServletLife</servlet-class>
-  	<load-on-startup>1</load-on-startup>
+    <servlet-name>ServletLife</servlet-name>
+    <servlet-class>com.servlet.ServletLife</servlet-class>
+    <load-on-startup>1</load-on-startup>
   </servlet>
   <servlet-mapping>
-	<servlet-name>ServletLife</servlet-name>
-	<url-pattern>/life</url-pattern>
+    <servlet-name>ServletLife</servlet-name>
+    <url-pattern>/life</url-pattern>
   </servlet-mapping>
 </web-app>

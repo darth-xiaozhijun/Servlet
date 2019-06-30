@@ -3,6 +3,7 @@ package com.servlet;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -86,6 +87,15 @@ public class LoginServlet extends HttpServlet {
 //			resp.getWriter().write("登录成功");
 			//请求转发
 //			req.getRequestDispatcher("main").forward(req, resp);
+			
+			//创建Cookie信息实现三天免登录。
+			Cookie c=new Cookie("uid", u.getId()+"");
+			//设置Cookie的有效期
+			c.setMaxAge(3*24*3600);
+			c.setPath("/Servlet/loginCookie");
+			//添加Cookie信息
+			resp.addCookie(c);
+			
 			//重定向
 			resp.sendRedirect("main");
 			return;

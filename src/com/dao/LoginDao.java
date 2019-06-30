@@ -11,4 +11,11 @@ public interface LoginDao {
 	 * @return
 	 */
 	User checkLoginDao(String uname,String pwd);
+
+	/**
+	 * 根据uid获取用户信息
+	 * @param uid
+	 * @return
+	 */
+	User checkIdDao(String uid);
 }

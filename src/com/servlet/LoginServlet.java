@@ -83,7 +83,12 @@ public class LoginServlet extends HttpServlet {
 		System.out.println(u);
 		//响应处理结果
 		if(u != null){
-			resp.getWriter().write("登录成功");
+//			resp.getWriter().write("登录成功");
+			//请求转发
+//			req.getRequestDispatcher("main").forward(req, resp);
+			//重定向
+			resp.sendRedirect("main");
+			return;
 		}else{
 //			resp.getWriter().write("登录失败");
 			//使用request对象实现不同Servlet的数据流转

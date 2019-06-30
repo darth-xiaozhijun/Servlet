@@ -70,7 +70,7 @@ public class CookieServlet extends HttpServlet {
 					//设置Cookie的有效期
 					c2.setMaxAge(3*24*3600);
 //					//设置有效路径
-//					c2.setPath("/cookie/gc");
+					c2.setPath("getCookie");
 				//响应Cookie信息
 				resp.addCookie(c);
 				resp.addCookie(c2);

@@ -73,7 +73,7 @@ public class LoginServlet extends HttpServlet {
 		resp.setContentType("text/html;charset=utf-8");
 		//获取请求信息
 		String uname=req.getParameter("uname");
-		//uname=new String(uname.getBytes("iso8859-1"),"utf-8");//使用String进行数据重新编码
+//		uname=new String(uname.getBytes("iso8859-1"),"utf-8");//使用String进行数据重新编码
 		String pwd=req.getParameter("pwd");
 		System.out.println(uname+":"+pwd);
 		//处理请求信息
@@ -85,7 +85,12 @@ public class LoginServlet extends HttpServlet {
 		if(u != null){
 			resp.getWriter().write("登录成功");
 		}else{
-			resp.getWriter().write("登录失败");
+//			resp.getWriter().write("登录失败");
+			//使用request对象实现不同Servlet的数据流转
+			req.setAttribute("str", "用户名或密码错误");
+			//使用请求转发
+			req.getRequestDispatcher("page").forward(req, resp);
+			return;
 		}
 	}
 

@@ -23,7 +23,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    <form action="method" method="post">
+    <form action="req" method="post">
     	用户名: <input type="text" name="uname" value="" /><br />
     	密码: <input type="text" name="pwd" value="" /><br />
     	爱好：<br />

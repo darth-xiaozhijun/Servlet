@@ -7,6 +7,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.pojo.User;
 import com.service.LoginService;
@@ -58,6 +59,15 @@ import com.service.impl.LoginServiceImpl;
  *		时机：
  *			如果请求中有表单数据，而数据又比较重要，不能重复提交，建议使用重定向。
  *			如果请求被Servlet接收后，无法进行处理，建议使用重定向定位到可以处理的资源。
+ *解决主页面用户名显示为null的问题：
+ *		原因：
+ *			因为在用户登录成功后使用重定向显示主页面，两次请求，而用户的信息
+ *			在第一次请求中，第二次请求中没有用户数据，所以显示为null
+ *		解决:
+ *			使用session
+ *使用ServletContext对象完成网页计数器
+ *		在用户登录校验中创建计数器并自增，然后存储到ServletContext对象中
+ *		在主页面里取出计数器数据显示给用户即可。
  */
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
@@ -95,7 +105,11 @@ public class LoginServlet extends HttpServlet {
 			c.setPath("/Servlet/loginCookie");
 			//添加Cookie信息
 			resp.addCookie(c);
-			
+			//请求转发
+			//req.getRequestDispatcher("main").forward(req, resp);
+		//将数据存储到session对象中
+			HttpSession httpSession = req.getSession();
+			httpSession.setAttribute("user", u);
 			//重定向
 			resp.sendRedirect("main");
 			return;

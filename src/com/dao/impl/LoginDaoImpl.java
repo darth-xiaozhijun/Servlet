@@ -91,7 +91,7 @@ public class LoginDaoImpl implements LoginDao{
 			//遍历执行结果
 			while(rs.next()){
 				u=new User();
-				u.setId(rs.getInt("uid"));
+				u.setId(rs.getInt("id"));
 				u.setUname(rs.getString("uname"));
 				u.setPwd(rs.getString("pwd"));
 			}

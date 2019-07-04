@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
-  <!--配置全局数据  -->
   <context-param>
-  	<param-name>name</param-name>
-  	<param-value>zhangsan</param-value>
+    <param-name>name</param-name>
+    <param-value>zhangsan</param-value>
   </context-param>
   <servlet>
     <servlet-name>my</servlet-name>
@@ -29,5 +28,15 @@
   <servlet-mapping>
     <servlet-name>ServletLife</servlet-name>
     <url-pattern>/life</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>NumberServlet</servlet-name>
+    <servlet-class>com.servlet.NumberServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>NumberServlet</servlet-name>
+    <url-pattern>/number</url-pattern>
   </servlet-mapping>
 </web-app>

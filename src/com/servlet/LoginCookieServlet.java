@@ -58,6 +58,11 @@ public class LoginCookieServlet extends HttpServlet {
 							
 							//将用户数据存储到session对象中
 							req.getSession().setAttribute("user",u);
+							
+							//网页计数器自增
+							int nums=(int) this.getServletContext().getAttribute("nums");
+							nums+=1;
+							this.getServletContext().setAttribute("nums", nums);
 							//重定向
 							resp.sendRedirect("main");
 							return;

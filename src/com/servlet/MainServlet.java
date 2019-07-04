@@ -27,6 +27,8 @@ public class MainServlet extends HttpServlet {
 	//获取请求信息
 		//获取session中的数据
 		User u=(User) req.getSession().getAttribute("user");
+		//获取网页浏览次数
+		int nums=(int) this.getServletContext().getAttribute("nums");
 	//处理请求信息
 	//响应处理结果
 		resp.getWriter().write("<html>");
@@ -35,6 +37,7 @@ public class MainServlet extends HttpServlet {
 		resp.getWriter().write("<body>");
 //		resp.getWriter().write("<h3>欢迎"+req.getParameter("uname")+"访问Servlet管理系统</h3>");
 		resp.getWriter().write("<h3>欢迎"+u.getUname()+"访问Servlet管理系统</h3>");
+		resp.getWriter().write("当前网页浏览次数为:"+nums);
 		resp.getWriter().write("<hr>");
 		resp.getWriter().write("<form action='show' method='get'>");
 		resp.getWriter().write("<input type='submit' value='查看个人信息'>");

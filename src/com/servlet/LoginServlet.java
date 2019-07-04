@@ -1,6 +1,8 @@
 package com.servlet;
 
 import java.io.IOException;
+
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
@@ -110,6 +112,18 @@ public class LoginServlet extends HttpServlet {
 		//将数据存储到session对象中
 			HttpSession httpSession = req.getSession();
 			httpSession.setAttribute("user", u);
+			//创建网页计数器
+			//获取计数数据
+			ServletContext sc=this.getServletContext();
+			if(sc.getAttribute("nums")!=null){
+				int nums=Integer.parseInt((String) sc.getAttribute("nums"));
+				//计数器自增
+				nums+=1;
+				//再次存储到ServletContext对象中
+				sc.setAttribute("nums", nums);
+			}else{
+				sc.setAttribute("nums", 1);
+			}
 			//重定向
 			resp.sendRedirect("main");
 			return;

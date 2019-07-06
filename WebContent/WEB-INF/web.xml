@@ -29,7 +29,6 @@
     <servlet-name>ServletLife</servlet-name>
     <url-pattern>/life</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>NumberServlet</servlet-name>
     <servlet-class>com.servlet.NumberServlet</servlet-class>
@@ -38,5 +37,17 @@
   <servlet-mapping>
     <servlet-name>NumberServlet</servlet-name>
     <url-pattern>/number</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ServletConfig</servlet-name>
+    <servlet-class>com.servlet.ServletConfigServlet</servlet-class>
+    <init-param>
+    	<param-name>config</param-name>
+    	<param-value>utf-8</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletConfig</servlet-name>
+    <url-pattern>/servletConfig</url-pattern>
   </servlet-mapping>
 </web-app>

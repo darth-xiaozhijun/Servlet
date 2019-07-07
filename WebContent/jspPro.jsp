@@ -153,5 +153,9 @@
 				System.out.println("我是全局代码块声明");
 			}
 		%>
+		<!--jsp的静态引入  -->
+		<%@include file="includeStatic.jsp" %>
+		<!-- jsp的动态引入 -->
+		<jsp:include page="includeActive.jsp"></jsp:include>
 	</body>
 </html>

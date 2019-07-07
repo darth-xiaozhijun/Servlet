@@ -1,7 +1,8 @@
 <%@ page language="java" import="java.util.*,java.lang.*" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page session="false" %>
+<%@ page session="true" %>
 <%@ page errorPage="error.jsp" %>
+<%@ page isErrorPage="true" %>
 <%--
 	Jsp的三种注释	
 		前端语言注释：
@@ -157,5 +158,18 @@
 		<%@include file="includeStatic.jsp" %>
 		<!-- jsp的动态引入 -->
 		<jsp:include page="includeActive.jsp"></jsp:include>
+		<!-- jsp的转发forward标签 -->
+		<%-- <jsp:forward page="forward.jsp">
+			<jsp:param value="aaa" name="str"/>
+		</jsp:forward> --%>
+		<!-- jsp的 九大内置对象学习-->
+		<%
+			String s = request.getParameter("str");
+			request.getAttribute("str");
+		%>
+		<%=s %>
+		<%
+			//response.sendRedirect("forward.jsp");
+		%>
 	</body>
 </html>

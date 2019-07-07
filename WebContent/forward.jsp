@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<i>我是动态引入------网站声明</i>
+	<b>我是转发页面---forward--<%=request.getParameter("str") %></b>
 </body>
 </html>

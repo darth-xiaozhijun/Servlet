@@ -171,5 +171,10 @@
 		<%
 			//response.sendRedirect("forward.jsp");
 		%>
+		<!--Jsp的路径  -->
+		<br>
+		<a href="/Servlet/a/a.jsp">a.jsp</a>
+		<br>
+		<a href="/Servlet/a/b/b.jsp">b.jsp</a>
 	</body>
 </html>

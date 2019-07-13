@@ -42,8 +42,8 @@
     <servlet-name>ServletConfig</servlet-name>
     <servlet-class>com.servlet.ServletConfigServlet</servlet-class>
     <init-param>
-    	<param-name>config</param-name>
-    	<param-value>utf-8</param-value>
+      <param-name>config</param-name>
+      <param-value>utf-8</param-value>
     </init-param>
   </servlet>
   <servlet-mapping>

@@ -29,6 +29,13 @@ public class AjaxServlet extends HttpServlet {
 			System.out.println(name+":"+pwd+":"+req.getMethod());
 		//处理请求信息
 		//响应处理结果
+			
+			try {
+				Thread.sleep(3000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			resp.getWriter().write("今天的雾霾真得是新鲜，666");
 	}
 

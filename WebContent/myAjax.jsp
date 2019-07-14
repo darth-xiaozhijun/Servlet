@@ -97,6 +97,7 @@
 			}
 		}
 	//发送请求
+	/* ajax.open("get","ajax",false);//同步 */
 	ajax.open("get","ajax",true);
 	ajax.send(null);
 	alert("哈哈");

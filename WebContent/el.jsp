@@ -88,7 +88,8 @@
 	session.setAttribute("hello","hello session");
 	application.setAttribute("hello","hello application");
 %>
-
+${ hello }
+<br />
 ${pageScope.hello}---${requestScope.hello}--${sessionScope.hello}--${applicationScope.hello}
 <h3>EL表达式的逻辑运算</h3>
 ${1+2}--${1*2}--${4/2}--${4-2}--${4%3}--${4==4}--${4>2}--${sex==1?'男':'女'}--${1+'2'}

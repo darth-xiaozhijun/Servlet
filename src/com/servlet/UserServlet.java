@@ -13,7 +13,7 @@ import com.pojo.User;
 import com.service.UserService;
 import com.service.impl.UserSeviceImp;
 
-@WebServlet("/user")
+@WebServlet("/user.do")
 public class UserServlet extends HttpServlet{
 	
 	@Override

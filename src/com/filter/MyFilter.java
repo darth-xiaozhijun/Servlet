@@ -85,13 +85,13 @@ public class MyFilter implements Filter {
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=utf-8");
 		//判断session
-			HttpSession hs=((HttpServletRequest) request).getSession();
-			if(hs.getAttribute("user")==null){
-				((HttpServletResponse)response).sendRedirect("/Servlet/user.do");
-			}else{
+//			HttpSession hs=((HttpServletRequest) request).getSession();
+//			if(hs.getAttribute("user")==null){
+//				((HttpServletResponse)response).sendRedirect("/Servlet/user.do");
+//			}else{
 				//放行
 				chain.doFilter(request, response);
-			}
+//			}
 		System.out.println("MyFilter.doFilter(我被执行了2)");
 	}
 
